@@ -47,6 +47,7 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnThem,
             this.btnSua,
@@ -54,7 +55,7 @@
             this.btnExit});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(800, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(800, 27);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -63,7 +64,7 @@
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(57, 22);
+            this.btnThem.Size = new System.Drawing.Size(61, 24);
             this.btnThem.Text = "Thêm";
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
@@ -72,7 +73,7 @@
             this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
             this.btnSua.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(46, 22);
+            this.btnSua.Size = new System.Drawing.Size(50, 24);
             this.btnSua.Text = "Sửa";
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
@@ -81,19 +82,22 @@
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(47, 22);
+            this.btnXoa.Size = new System.Drawing.Size(51, 24);
             this.btnXoa.Text = "Xóa";
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnExit
             // 
             this.btnExit.Image = global::QuanLyPhongTro.Properties.Resources.logout;
             this.btnExit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(57, 22);
+            this.btnExit.Size = new System.Drawing.Size(61, 24);
             this.btnExit.Text = "Thoát";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // statusStrip1
             // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblErr});
             this.statusStrip1.Location = new System.Drawing.Point(0, 428);
@@ -118,28 +122,35 @@
             this.cl_GiaPhong,
             this.cl_TrangThai});
             this.dtgvDSPhong.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgvDSPhong.Location = new System.Drawing.Point(0, 25);
+            this.dtgvDSPhong.Location = new System.Drawing.Point(0, 27);
             this.dtgvDSPhong.Name = "dtgvDSPhong";
             this.dtgvDSPhong.ReadOnly = true;
-            this.dtgvDSPhong.Size = new System.Drawing.Size(800, 403);
+            this.dtgvDSPhong.RowHeadersWidth = 51;
+            this.dtgvDSPhong.Size = new System.Drawing.Size(800, 401);
             this.dtgvDSPhong.TabIndex = 5;
             this.dtgvDSPhong.Click += new System.EventHandler(this.dtgvDSPhong_Click);
             // 
             // cl_MaP
             // 
+            this.cl_MaP.DataPropertyName = "MaP";
             this.cl_MaP.HeaderText = "MaP";
+            this.cl_MaP.MinimumWidth = 6;
             this.cl_MaP.Name = "cl_MaP";
             this.cl_MaP.ReadOnly = true;
             // 
             // cl_GiaPhong
             // 
+            this.cl_GiaPhong.DataPropertyName = "GiaPhong";
             this.cl_GiaPhong.HeaderText = "GiaPhong";
+            this.cl_GiaPhong.MinimumWidth = 6;
             this.cl_GiaPhong.Name = "cl_GiaPhong";
             this.cl_GiaPhong.ReadOnly = true;
             // 
             // cl_TrangThai
             // 
+            this.cl_TrangThai.DataPropertyName = "TrangThai";
             this.cl_TrangThai.HeaderText = "TrangThai";
+            this.cl_TrangThai.MinimumWidth = 6;
             this.cl_TrangThai.Name = "cl_TrangThai";
             this.cl_TrangThai.ReadOnly = true;
             // 
@@ -152,6 +163,7 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Frm_QuanLyPhong";
             this.Text = "Frm_QuanLyPhong";
             this.Load += new System.EventHandler(this.Frm_QuanLyPhong_Load);

@@ -30,20 +30,21 @@ namespace QuanLyPhongTro.BLL
             SqlParameter[] sqlparameter = new SqlParameter[]{
                new SqlParameter("@MaP",room.MaP),
                 new SqlParameter("@GiaPhong",room.GiaPhong),
-                 new SqlParameter("@TrangThai",room.GiaPhong),
-           };
-            return db.MyExcuteNonQuery(ref err, "PSP_Room_InsertOrUpdate", CommandType.StoredProcedure, sqlparameter);
+                 new SqlParameter("@TrangThai",room.TrangThai),
+            };
+            
+            return Int32.Parse(db.GetDataTable(ref err, "PSP_Room_InsertOrUpdate", CommandType.StoredProcedure, sqlparameter).Rows[0]["TotalRowChanged"].ToString());
 
         }
 
-        public int XoaPhong(ref string err, string maPhong)
+        public int XoaPhong(ref string err, Room room)
         {
             SqlParameter[] sqlParameters = new SqlParameter[]
             {
-                new SqlParameter("@MaP", maPhong)
+                new SqlParameter("@MaP", room.MaP)
             };
 
-            return db.MyExcuteNonQuery(ref err, "PSP_User_Delete", CommandType.StoredProcedure, sqlParameters);
+            return db.MyExcuteNonQuery(ref err, "PSP_Room_Delete", CommandType.StoredProcedure, sqlParameters);
         }
     }
 }

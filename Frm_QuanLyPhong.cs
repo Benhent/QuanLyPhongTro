@@ -52,13 +52,13 @@ namespace QuanLyPhongTro
             HienThiDSPhong();
         }
 
-        Room _room;
+        Room room;
 
         private void dtgvDSPhong_Click(object sender, EventArgs e)
         {
             if (dtgvDSPhong.CurrentRow != null && dtgvDSPhong.CurrentRow.Index >= 0 && dtgvDSPhong.CurrentRow.Cells["cl_MaP"].Value != null)
             {
-                _room = new Room()
+                room = new Room()
                 {
                     MaP = dtgvDSPhong.CurrentRow.Cells["cl_MaP"].Value.ToString(),
                     GiaPhong = float.Parse(dtgvDSPhong.CurrentRow.Cells["cl_GiaPhong"].Value.ToString()),
@@ -69,29 +69,29 @@ namespace QuanLyPhongTro
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            if (_room != null)
+            if (room != null)
             {
                 Frm_QuanLyPhong_modi frm_QuanLyPhong_modi = new Frm_QuanLyPhong_modi();
                 frm_QuanLyPhong_modi.isAdd = false;
-                frm_QuanLyPhong_modi._room = _room;
+                frm_QuanLyPhong_modi._room = room;
                 frm_QuanLyPhong_modi.ShowDialog();
                 HienThiDSPhong();
-                _room = null;
+                room = null;
             }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (_room != null)
+            if (room != null)
             {
                 var result = MessageBox.Show("Bạn có chắc chắn muốn xóa phòng này không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    if (bd.XoaPhong(ref err, _room.MaP) > 0)
+                    if (bd.XoaPhong(ref err, room) > 0)
                     {
                         MessageBox.Show("Xóa thành công");
                         HienThiDSPhong();
-                        _room = null;
+                        room = null;
                     }
                     else
                     {
@@ -99,6 +99,25 @@ namespace QuanLyPhongTro
                     }
                 }
             }
+
+            //if (room != null)
+            //{
+            //    if (bd.XoaPhong(ref err, room) > 0)
+            //    {
+            //        MessageBox.Show("Xóa thành công");
+            //        HienThiDSPhong();
+            //        room = null;
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Xóa không thành công");
+            //    }
+            //}
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            deDongtab();
         }
     }
 }

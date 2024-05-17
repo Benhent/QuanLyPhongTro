@@ -51,13 +51,14 @@ namespace QuanLyPhongTro
         {
             if (!string.IsNullOrEmpty(txtMaP.Text))
             {
-                // Khởi tạo đối tượng phòng và gán giá trị từ các điều khiển trên form
-                _room = new Room()
-                {
-                    MaP = txtMaP.Text,
-                    GiaPhong = float.Parse(txtGiaPhong.Text),
-                    TrangThai = cbTrangThai.Text
-                };
+
+                ////Khởi tạo đối tượng phòng và gán giá trị từ các điều khiển trên form
+               _room = new Room()
+               {
+                   MaP = txtMaP.Text,
+                   GiaPhong = float.Parse(txtGiaPhong.Text),
+                   TrangThai = cbTrangThai.Items[cbTrangThai.SelectedIndex].ToString()
+               };
 
                 // Gọi phương thức cập nhật thông tin phòng từ đối tượng BusinessLayer (bd)
                 if (bd.CapNhatPhong(ref err, _room) > 0)
