@@ -12,7 +12,7 @@ namespace QuanLyPhongTro.BLL
     public class BLL_Customer
     {
         internal MyDatabase db;
-        public BLL_Customer(string path) 
+        public BLL_Customer(string path)
         {
             db = new MyDatabase(path);
         }
@@ -34,7 +34,7 @@ namespace QuanLyPhongTro.BLL
                      new SqlParameter("@SoThangThue",customer.SoThangThue),
                       new SqlParameter("@MaP",customer.MaP),
            };
-            return db.MyExcuteNonQuery(ref err, "PSP_Customer_InsertAndUpdate", CommandType.StoredProcedure, sqlparameter);
+            return Int32.Parse(db.GetDataTable(ref err, "PSP_Customer_InsertAndUpdate", CommandType.StoredProcedure, sqlparameter).Rows[0]["TotalRowChanged"].ToString());
         }
 
         public int XoaCustomer(ref string err, Customer customer)

@@ -34,6 +34,7 @@ namespace QuanLyPhongTro
         {
             try
             {
+                dtroom = new DataTable();
                 dtroom = bd.LayDSPhong(ref err);
                 dtgvDSPhong.DataSource = dtroom.DefaultView;
             }
@@ -99,20 +100,6 @@ namespace QuanLyPhongTro
                     }
                 }
             }
-
-            //if (room != null)
-            //{
-            //    if (bd.XoaPhong(ref err, room) > 0)
-            //    {
-            //        MessageBox.Show("Xóa thành công");
-            //        HienThiDSPhong();
-            //        room = null;
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Xóa không thành công");
-            //    }
-            //}
         }
 
         private void btnExit_Click(object sender, EventArgs e)

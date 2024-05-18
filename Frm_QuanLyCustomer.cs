@@ -105,5 +105,10 @@ namespace QuanLyPhongTro
                 _customer = null;
             }
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            deDongtab();
+        }
     }
 }
