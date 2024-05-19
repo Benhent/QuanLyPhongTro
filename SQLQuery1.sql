@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [QuanLyPhongTro]    Script Date: 5/18/2024 5:48:12 PM ******/
+/****** Object:  Database [QuanLyPhongTro]    Script Date: 5/19/2024 10:37:19 PM ******/
 CREATE DATABASE [QuanLyPhongTro]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -82,7 +82,7 @@ ALTER DATABASE [QuanLyPhongTro] SET QUERY_STORE (OPERATION_MODE = READ_WRITE, CL
 GO
 USE [QuanLyPhongTro]
 GO
-/****** Object:  Table [dbo].[tbl_HoaDon]    Script Date: 5/18/2024 5:48:12 PM ******/
+/****** Object:  Table [dbo].[tbl_HoaDon]    Script Date: 5/19/2024 10:37:19 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -99,7 +99,7 @@ CREATE TABLE [dbo].[tbl_HoaDon](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[tbl_KhachHang]    Script Date: 5/18/2024 5:48:12 PM ******/
+/****** Object:  Table [dbo].[tbl_KhachHang]    Script Date: 5/19/2024 10:37:19 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -119,7 +119,7 @@ CREATE TABLE [dbo].[tbl_KhachHang](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[tbl_Phong]    Script Date: 5/18/2024 5:48:12 PM ******/
+/****** Object:  Table [dbo].[tbl_Phong]    Script Date: 5/19/2024 10:37:19 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -134,7 +134,7 @@ CREATE TABLE [dbo].[tbl_Phong](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[tbl_User]    Script Date: 5/18/2024 5:48:12 PM ******/
+/****** Object:  Table [dbo].[tbl_User]    Script Date: 5/19/2024 10:37:19 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -164,7 +164,23 @@ REFERENCES [dbo].[tbl_Phong] ([MaP])
 GO
 ALTER TABLE [dbo].[tbl_KhachHang] CHECK CONSTRAINT [FK_tbl_KhachHang_tbl_Phong]
 GO
-/****** Object:  StoredProcedure [dbo].[PSP_Customer_Delete]    Script Date: 5/18/2024 5:48:12 PM ******/
+/****** Object:  StoredProcedure [dbo].[PSP_Customer_CheckCustomerinRoom]    Script Date: 5/19/2024 10:37:19 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[PSP_Customer_CheckCustomerinRoom]
+    @MaP nchar(10)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT *
+    FROM tbl_KhachHang
+    WHERE MaP = @MaP;
+END;
+GO
+/****** Object:  StoredProcedure [dbo].[PSP_Customer_Delete]    Script Date: 5/19/2024 10:37:19 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -177,7 +193,7 @@ as
 delete tbl_KhachHang
 where MaKH=@MaKH
 GO
-/****** Object:  StoredProcedure [dbo].[PSP_Customer_InsertAndUpdate]    Script Date: 5/18/2024 5:48:12 PM ******/
+/****** Object:  StoredProcedure [dbo].[PSP_Customer_InsertAndUpdate]    Script Date: 5/19/2024 10:37:19 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -220,7 +236,7 @@ END
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[PSP_Customer_Select]    Script Date: 5/18/2024 5:48:12 PM ******/
+/****** Object:  StoredProcedure [dbo].[PSP_Customer_Select]    Script Date: 5/19/2024 10:37:19 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -233,7 +249,7 @@ BEGIN
     FROM tbl_KhachHang;
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PSP_KiemTraDangNhap]    Script Date: 5/18/2024 5:48:12 PM ******/
+/****** Object:  StoredProcedure [dbo].[PSP_KiemTraDangNhap]    Script Date: 5/19/2024 10:37:19 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -253,7 +269,22 @@ begin
 	select 0 as Code,'' as ID,N'' as HoTen
 End
 GO
-/****** Object:  StoredProcedure [dbo].[PSP_Room_Delete]    Script Date: 5/18/2024 5:48:12 PM ******/
+/****** Object:  StoredProcedure [dbo].[PSP_Room_CheckStatus]    Script Date: 5/19/2024 10:37:19 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [dbo].[PSP_Room_CheckStatus]
+    @MaP nchar(10)
+AS
+BEGIN
+    SELECT TrangThai
+    FROM tbl_Phong
+    WHERE MaP = @MaP
+END
+GO
+/****** Object:  StoredProcedure [dbo].[PSP_Room_Delete]    Script Date: 5/19/2024 10:37:19 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -264,7 +295,7 @@ as
 delete tbl_Phong
 where MaP=@MaP
 GO
-/****** Object:  StoredProcedure [dbo].[PSP_Room_InsertOrUpdate]    Script Date: 5/18/2024 5:48:12 PM ******/
+/****** Object:  StoredProcedure [dbo].[PSP_Room_InsertOrUpdate]    Script Date: 5/19/2024 10:37:19 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -295,7 +326,7 @@ BEGIN
     END
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[PSP_Room_Select]    Script Date: 5/18/2024 5:48:12 PM ******/
+/****** Object:  StoredProcedure [dbo].[PSP_Room_Select]    Script Date: 5/19/2024 10:37:19 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -308,7 +339,7 @@ BEGIN
     FROM [dbo].[tbl_Phong];
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[PSP_User_Delete]    Script Date: 5/18/2024 5:48:12 PM ******/
+/****** Object:  StoredProcedure [dbo].[PSP_User_Delete]    Script Date: 5/19/2024 10:37:19 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -319,7 +350,7 @@ as
 delete tbl_User
 where ID=@ID
 GO
-/****** Object:  StoredProcedure [dbo].[PSP_User_InsertAndUpdate]    Script Date: 5/18/2024 5:48:12 PM ******/
+/****** Object:  StoredProcedure [dbo].[PSP_User_InsertAndUpdate]    Script Date: 5/19/2024 10:37:19 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -343,7 +374,7 @@ begin
 	values( @HoTen, @Phai, @DienThoai, @TaiKhoan, @MatKhau)
 end
 GO
-/****** Object:  StoredProcedure [dbo].[PSP_User_Select]    Script Date: 5/18/2024 5:48:12 PM ******/
+/****** Object:  StoredProcedure [dbo].[PSP_User_Select]    Script Date: 5/19/2024 10:37:19 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
