@@ -105,7 +105,8 @@ namespace QuanLyPhongTro
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
+                    MessageBox.Show("Mã phòng không tồn tại!");
+                    //MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
                 }
             }
             else

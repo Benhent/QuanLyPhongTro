@@ -22,6 +22,8 @@ namespace QuanLyPhongTro
             InitializeComponent();
             string connectionString = "Data Source=ADMIN-PC\\SQLEXPRESS;Initial Catalog=QuanLyPhongTro;Integrated Security=True";
             bd = new BLL_HeThong(connectionString);  // Khởi tạo đối tượng BLL_HeThong với chuỗi kết nối
+
+            txt_Pass.PasswordChar = '∆';
         }
 
         private void btn_Exit_Click(object sender, EventArgs e)
