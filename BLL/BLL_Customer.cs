@@ -44,5 +44,17 @@ namespace QuanLyPhongTro.BLL
            };
             return db.MyExcuteNonQuery(ref err, "PSP_Customer_Delete", CommandType.StoredProcedure, sqlparameter);
         }
+
+        public bool KiemTraKHtrongP(string maP, ref string err)
+        {
+            SqlParameter[] sqlParameters = new SqlParameter[]
+            {
+                new SqlParameter("@MaP", maP)
+            };
+
+            DataTable dt = db.GetDataTable(ref err, "PSP_Customer_CheckExistenceInRoom", CommandType.StoredProcedure, sqlParameters);
+            return dt.Rows.Count > 0;
+        }
+
     }
 }

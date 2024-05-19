@@ -80,9 +80,22 @@ namespace QuanLyPhongTro
         {
             if (_customer != null)
             {
+                string maPhong = _customer.MaP;
+
                 if (bd.XoaCustomer(ref err, _customer) > 0)
                 {
                     MessageBox.Show("Xóa thành công");
+
+                    // Kiểm tra xem khách hàng còn tồn tại trong phòng không
+                    if (!bd.KiemTraKHtrongP(maPhong, ref err))
+                    {
+                        // Nếu không còn tồn tại, cập nhật trạng thái của phòng thành "còn trống"
+                        BLL_Room bllRoom = new BLL_Room(path);
+                        Room room = new Room() { MaP = maPhong };
+                        room.TrangThai = "Còn trống";
+                        bllRoom.CapNhatPhong(ref err, room);
+                    }
+
                     DanhSachCustomer();
                     _customer = null;
                 }

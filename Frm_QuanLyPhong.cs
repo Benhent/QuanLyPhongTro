@@ -90,6 +90,7 @@ namespace QuanLyPhongTro
                 {
                     if (bd.XoaPhong(ref err, room) > 0)
                     {
+
                         MessageBox.Show("Xóa thành công");
                         HienThiDSPhong();
                         room = null;

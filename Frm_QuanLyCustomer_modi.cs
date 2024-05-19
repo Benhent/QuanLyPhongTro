@@ -74,6 +74,14 @@ namespace QuanLyPhongTro
                         MessageBox.Show("Số tháng thuê không hợp lệ. Vui lòng nhập một số nguyên dương.");
                         return;
                     }
+                    string MaP = txtMaPhong.Text;
+                    Room room = new Room() { MaP = MaP }; // tạo đối tượng phòng
+                    BLL_Room bllRoom = new BLL_Room(path);
+                    if (!bllRoom.CheckTrangThaiPhong(ref err, room))
+                    {
+                        MessageBox.Show("Phòng đã hết.");
+                        return;
+                    }
                     // Khởi tạo đối tượng người dùng và gán giá trị trên control vào đối tượng User
                     _customer = new Customer()
                     {
@@ -92,6 +100,11 @@ namespace QuanLyPhongTro
                     if (_bd.CapNhatCustomer(ref err, _customer) > 0)
                     {
                         MessageBox.Show("Cập nhật thành công");
+
+                        // Cập nhật trạng thái của phòng thành "đã hết"
+                        room.TrangThai = "Đã hết";
+                        bllRoom.CapNhatPhong(ref err, room);
+
                         this.Close();
                     }
                     else
@@ -103,7 +116,7 @@ namespace QuanLyPhongTro
                 {
                     MessageBox.Show("Mã khách hàng không hợp lệ. Vui lòng kiểm tra lại.");
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     MessageBox.Show("Mã phòng không tồn tại!");
                     //MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);

@@ -46,5 +46,22 @@ namespace QuanLyPhongTro.BLL
 
             return db.MyExcuteNonQuery(ref err, "PSP_Room_Delete", CommandType.StoredProcedure, sqlParameters);
         }
+
+        public bool CheckTrangThaiPhong(ref string err, Room room)
+        {
+            SqlParameter[] sqlParameters = new SqlParameter[]
+            {
+                new SqlParameter("@MaP", room.MaP)
+            };
+
+            DataTable dt = db.GetDataTable(ref err, "PSP_Room_CheckStatus", CommandType.StoredProcedure, sqlParameters);
+            if (dt.Rows.Count > 0)
+            {
+                string status = dt.Rows[0]["TrangThai"].ToString();
+                return status != "Đã hết";
+            }
+            return false;
+        }
+
     }
 }
