@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevComponents.DotNetBar;
 using QuanLyPhongTro.BLL;
 using QuanLyPhongTro.DTO;
 

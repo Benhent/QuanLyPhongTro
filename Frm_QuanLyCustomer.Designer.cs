@@ -32,7 +32,7 @@
             this.btn_Them = new System.Windows.Forms.ToolStripButton();
             this.btnSua = new System.Windows.Forms.ToolStripButton();
             this.btnXoa = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.btn_Exit = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblErr = new System.Windows.Forms.ToolStripStatusLabel();
             this.dtgvDsCustomer = new System.Windows.Forms.DataGridView();
@@ -55,7 +55,7 @@
             this.btn_Them,
             this.btnSua,
             this.btnXoa,
-            this.toolStripButton4});
+            this.btn_Exit});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(800, 25);
@@ -89,13 +89,14 @@
             this.btnXoa.Text = "Xóa";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // toolStripButton4
+            // btn_Exit
             // 
-            this.toolStripButton4.Image = global::QuanLyPhongTro.Properties.Resources.logout;
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(57, 22);
-            this.toolStripButton4.Text = "Thoát";
+            this.btn_Exit.Image = global::QuanLyPhongTro.Properties.Resources.logout;
+            this.btn_Exit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_Exit.Name = "btn_Exit";
+            this.btn_Exit.Size = new System.Drawing.Size(57, 22);
+            this.btn_Exit.Text = "Thoát";
+            this.btn_Exit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // statusStrip1
             // 
@@ -222,7 +223,7 @@
         private System.Windows.Forms.ToolStripStatusLabel lblErr;
         private System.Windows.Forms.ToolStripButton btnSua;
         private System.Windows.Forms.ToolStripButton btnXoa;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
+        private System.Windows.Forms.ToolStripButton btn_Exit;
         private System.Windows.Forms.DataGridView dtgvDsCustomer;
         private System.Windows.Forms.DataGridViewTextBoxColumn cl_MaKH;
         private System.Windows.Forms.DataGridViewTextBoxColumn cl_HoTenKH;

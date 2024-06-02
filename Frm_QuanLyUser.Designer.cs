@@ -35,14 +35,15 @@
             this.btnXoa = new System.Windows.Forms.ToolStripButton();
             this.btnExit = new System.Windows.Forms.ToolStripButton();
             this.dtgvDsUser = new System.Windows.Forms.DataGridView();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lblErr = new System.Windows.Forms.ToolStripStatusLabel();
             this.cl_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cl_HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cl_Phai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cl_DienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cl_TaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cl_MatKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.lblErr = new System.Windows.Forms.ToolStripStatusLabel();
+            this.cl_role = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDsUser)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -109,7 +110,8 @@
             this.cl_Phai,
             this.cl_DienThoai,
             this.cl_TaiKhoan,
-            this.cl_MatKhau});
+            this.cl_MatKhau,
+            this.cl_role});
             this.dtgvDsUser.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvDsUser.Location = new System.Drawing.Point(0, 25);
             this.dtgvDsUser.Name = "dtgvDsUser";
@@ -117,6 +119,21 @@
             this.dtgvDsUser.Size = new System.Drawing.Size(800, 425);
             this.dtgvDsUser.TabIndex = 2;
             this.dtgvDsUser.Click += new System.EventHandler(this.dtgvDsUser_Click);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblErr});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 428);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(800, 22);
+            this.statusStrip1.TabIndex = 3;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // lblErr
+            // 
+            this.lblErr.Name = "lblErr";
+            this.lblErr.Size = new System.Drawing.Size(0, 17);
             // 
             // cl_ID
             // 
@@ -160,20 +177,12 @@
             this.cl_MatKhau.Name = "cl_MatKhau";
             this.cl_MatKhau.ReadOnly = true;
             // 
-            // statusStrip1
+            // cl_role
             // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lblErr});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 428);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(800, 22);
-            this.statusStrip1.TabIndex = 3;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // lblErr
-            // 
-            this.lblErr.Name = "lblErr";
-            this.lblErr.Size = new System.Drawing.Size(0, 17);
+            this.cl_role.DataPropertyName = "GroupID";
+            this.cl_role.HeaderText = "Role";
+            this.cl_role.Name = "cl_role";
+            this.cl_role.ReadOnly = true;
             // 
             // Frm_QuanLyUser
             // 
@@ -212,5 +221,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cl_DienThoai;
         private System.Windows.Forms.DataGridViewTextBoxColumn cl_TaiKhoan;
         private System.Windows.Forms.DataGridViewTextBoxColumn cl_MatKhau;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cl_role;
     }
 }

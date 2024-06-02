@@ -35,7 +35,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pb_Exit = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pb_PhanQuyen = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pb_QuanLyUser = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -48,7 +48,7 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Exit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_PhanQuyen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_QuanLyUser)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_QuanLyPhong)).BeginInit();
@@ -88,7 +88,7 @@
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.pb_Exit);
-            this.tabPage1.Controls.Add(this.pictureBox2);
+            this.tabPage1.Controls.Add(this.pb_PhanQuyen);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.pb_QuanLyUser);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
@@ -128,15 +128,16 @@
             this.pb_Exit.TabStop = false;
             this.pb_Exit.Click += new System.EventHandler(this.pb_Exit_Click);
             // 
-            // pictureBox2
+            // pb_PhanQuyen
             // 
-            this.pictureBox2.Image = global::QuanLyPhongTro.Properties.Resources.decentralization;
-            this.pictureBox2.Location = new System.Drawing.Point(220, 6);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(62, 44);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
+            this.pb_PhanQuyen.Image = global::QuanLyPhongTro.Properties.Resources.decentralization;
+            this.pb_PhanQuyen.Location = new System.Drawing.Point(220, 6);
+            this.pb_PhanQuyen.Name = "pb_PhanQuyen";
+            this.pb_PhanQuyen.Size = new System.Drawing.Size(62, 44);
+            this.pb_PhanQuyen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pb_PhanQuyen.TabIndex = 2;
+            this.pb_PhanQuyen.TabStop = false;
+            this.pb_PhanQuyen.Click += new System.EventHandler(this.pb_PhanQuyen_Click);
             // 
             // label1
             // 
@@ -246,7 +247,7 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Exit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_PhanQuyen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_QuanLyUser)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
@@ -266,7 +267,7 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.PictureBox pb_Exit;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pb_PhanQuyen;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pb_QuanLyUser;
         private System.Windows.Forms.Label label3;

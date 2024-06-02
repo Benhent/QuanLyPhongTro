@@ -112,5 +112,10 @@ namespace QuanLyPhongTro
         {
             OpenForm(true, "Quản lý phòng", new Frm_QuanLyPhong());
         }
+
+        private void pb_PhanQuyen_Click(object sender, EventArgs e)
+        {
+            OpenForm(true, "Phân quyền", new Frm_PhanQuyen());
+        }
     }
 }

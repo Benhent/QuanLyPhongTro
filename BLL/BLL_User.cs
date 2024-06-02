@@ -59,7 +59,7 @@ namespace QuanLyPhongTro.BLL
         {
             SqlParameter[] sqlparameter = new SqlParameter[]{
                new SqlParameter("@ID",user.ID)
-           };
+            };
             return _db.MyExcuteNonQuery(ref err, "PSP_User_Delete", CommandType.StoredProcedure, sqlparameter);
         }
 
