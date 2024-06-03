@@ -124,6 +124,7 @@
     <Compile Include="MyDatabase.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QUYEN.cs" />
     <EmbeddedResource Include="Frm_Base.resx">
       <DependentUpon>Frm_Base.cs</DependentUpon>
     </EmbeddedResource>

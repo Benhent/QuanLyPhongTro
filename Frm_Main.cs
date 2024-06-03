@@ -67,31 +67,58 @@ namespace QuanLyPhongTro
             tabControl2.Tabs.Remove(t);
         }
 
-        private void OpenForm(bool statusOpen, string title, Frm_Base frm)
+        private void OpenForm(bool statusOpen, string title, Frm_Base frm, QUYEN quyen)
         {
-            bKTraMotab = statusOpen;
-            sTieuDe = title;
-            if (!CheckOpenTab(sTieuDe))
+            if (ClsMain.CheckQuyen(frm, quyen))
             {
-                TabItem t = tabControl2.CreateTab(sTieuDe);
-                t.Name = "Frm_QuanLyUser";
+                bKTraMotab = statusOpen;
+                sTieuDe = title;
+                if (!CheckOpenTab(sTieuDe))
+                {
+                    TabItem t = tabControl2.CreateTab(sTieuDe);
+                    t.Name = frm.Name;
 
-                frm.deDongtab = new Frm_Base._deDongtab(vDongTab);
-                this.frm_Main = this;
-                frm.TopLevel = false;
-                frm.Dock = DockStyle.Fill;
-                t.AttachedControl.Controls.Add(frm);
-                frm.Show();
+                    frm.deDongtab = new Frm_Base._deDongtab(vDongTab);
+                    this.frm_Main = this;
+                    frm.TopLevel = false;
+                    frm.Dock = DockStyle.Fill;
+                    t.AttachedControl.Controls.Add(frm);
+                    frm.Show();
 
-                tabControl2.SelectedTabIndex = tabControl2.Tabs.Count - 1;
+                    tabControl2.SelectedTabIndex = tabControl2.Tabs.Count - 1;
+                }
+            }
+            else
+            {
+                MessageBox.Show("khong co quyen");
             }
         }
 
+        private void OpenForm(bool statusOpen, string title, Frm_Base frm)
+        { 
+                bKTraMotab = statusOpen;
+                sTieuDe = title;
+                if (!CheckOpenTab(sTieuDe))
+                {
+                    TabItem t = tabControl2.CreateTab(sTieuDe);
+                    t.Name = frm.Name;
+
+                    frm.deDongtab = new Frm_Base._deDongtab(vDongTab);
+                    this.frm_Main = this;
+                    frm.TopLevel = false;
+                    frm.Dock = DockStyle.Fill;
+                    t.AttachedControl.Controls.Add(frm);
+                    frm.Show();
+
+                    tabControl2.SelectedTabIndex = tabControl2.Tabs.Count - 1;
+                }
+        }
+        
         #endregion
 
         private void pb_QuanLyUser_Click(object sender, EventArgs e)
         {
-            OpenForm(true, "Quản lý người dùng", new Frm_QuanLyUser());
+            OpenForm(true, "Quản lý người dùng", new Frm_QuanLyUser(), QUYEN.XEM);
         }
 
         private void pb_Exit_Click(object sender, EventArgs e)
@@ -105,12 +132,12 @@ namespace QuanLyPhongTro
 
         private void pb_QuanLyCustomer_Click(object sender, EventArgs e)
         {
-            OpenForm(true, "Quản lý khách hàng", new Frm_QuanLyCustomer());
+            OpenForm(true, "Quản lý khách hàng", new Frm_QuanLyCustomer(), QUYEN.XEM);
         }
 
         private void pb_QuanLyPhong_Click(object sender, EventArgs e)
         {
-            OpenForm(true, "Quản lý phòng", new Frm_QuanLyPhong());
+            OpenForm(true, "Quản lý phòng", new Frm_QuanLyPhong(), QUYEN.XEM);
         }
 
         private void pb_PhanQuyen_Click(object sender, EventArgs e)

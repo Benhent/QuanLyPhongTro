@@ -29,6 +29,42 @@ namespace QuanLyPhongTro.BLL
             return db.GetDataTable(ref err, "PSP_KiemTraDangNhap", CommandType.StoredProcedure, sqlParameters);
         }
 
+
+        #region Phân Quyền
+        public DataTable LayDSGroupUser(ref string err)
+        {
+            return db.GetDataTable(ref err, "PSP_GroupUser_SelectToCombo", CommandType.StoredProcedure, null);
+        }
+
+        public DataTable LayDSFunctionsByUser(ref string err, string groupID)
+        {
+            SqlParameter[] sqlParameters = new SqlParameter[]
+            {
+         new SqlParameter("@GroupID",groupID)
+            };
+            return db.GetDataTable(ref err, "PSP_PhanQuyen_SelectToGrid", CommandType.StoredProcedure, sqlParameters);
+        }
+
+        public int CapNhatPhanQuyen(ref string err, string funcId, string groupId, int tong)
+        {
+            SqlParameter[] sqlParameters = new SqlParameter[]
+            {
+                new SqlParameter("@GroupID",groupId),
+                    new SqlParameter("@FuncID",funcId),
+                        new SqlParameter("@Total",tong)
+            };
+            return db.MyExcuteNonQuery(ref err, "PSP_PhanQuyen_InsertAndUpdate", CommandType.StoredProcedure, sqlParameters);
+        }
+
+        public DataTable LayDanhSachQuyen(ref string err, string ID)
+        {
+            SqlParameter[] sqlParameters = new SqlParameter[]
+            {
+                new SqlParameter("@ID",ID)
+            };
+            return db.GetDataTable(ref err, "PSP_PhanQuyen_Select", CommandType.StoredProcedure, sqlParameters);
+        }
+        #endregion
     }
 
 }

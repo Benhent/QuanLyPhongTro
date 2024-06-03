@@ -1,5 +1,6 @@
 ﻿using QuanLyPhongTro.BLL;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -74,10 +75,27 @@ namespace QuanLyPhongTro
             {
                 if (dtUser.Rows[0]["Code"].ToString().Equals("1"))
                 {
+                    LayGiaTriQuyen(dtUser.Rows[0]["ID"].ToString());
                     return true;
                 }
             }
             return false;
         }
+
+        private void LayGiaTriQuyen(string ID)
+        {
+            DataTable dtQuyen = new DataTable();
+            dtQuyen = bd.LayDanhSachQuyen(ref err, ID);
+
+            if (dtQuyen.Rows.Count > 0)
+            {
+                ClsMain.hsQuyenByUser = new Hashtable();
+                foreach (DataRow item in dtQuyen.Rows)
+                {
+                    ClsMain.hsQuyenByUser.Add(item["Alias"], Convert.ToInt32(item["Total"].ToString()));
+                }
+            }
+        }
+
     }
 }

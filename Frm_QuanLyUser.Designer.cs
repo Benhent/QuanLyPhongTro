@@ -43,7 +43,6 @@
             this.cl_DienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cl_TaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cl_MatKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_role = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDsUser)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -110,8 +109,7 @@
             this.cl_Phai,
             this.cl_DienThoai,
             this.cl_TaiKhoan,
-            this.cl_MatKhau,
-            this.cl_role});
+            this.cl_MatKhau});
             this.dtgvDsUser.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvDsUser.Location = new System.Drawing.Point(0, 25);
             this.dtgvDsUser.Name = "dtgvDsUser";
@@ -177,13 +175,6 @@
             this.cl_MatKhau.Name = "cl_MatKhau";
             this.cl_MatKhau.ReadOnly = true;
             // 
-            // cl_role
-            // 
-            this.cl_role.DataPropertyName = "GroupID";
-            this.cl_role.HeaderText = "Role";
-            this.cl_role.Name = "cl_role";
-            this.cl_role.ReadOnly = true;
-            // 
             // Frm_QuanLyUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -221,6 +212,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cl_DienThoai;
         private System.Windows.Forms.DataGridViewTextBoxColumn cl_TaiKhoan;
         private System.Windows.Forms.DataGridViewTextBoxColumn cl_MatKhau;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cl_role;
     }
 }
