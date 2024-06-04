@@ -49,9 +49,9 @@ namespace QuanLyPhongTro
         private void btn_Them_Click(object sender, EventArgs e)
         {
             Frm_QuanLyCustomer_modi frm_qlcustomer_modi = new Frm_QuanLyCustomer_modi();
-            frm_qlcustomer_modi.isAdd = true;// Xác định trạng thái mở form để thêm mới khách hàng
+            frm_qlcustomer_modi.isAdd = true;
             frm_qlcustomer_modi.ShowDialog();
-            // Gọi lại phương thức show danh sách khách hàng sau khi thêm vào database
+
             DanhSachCustomer();
         }
 

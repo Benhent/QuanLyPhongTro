@@ -1,4 +1,5 @@
-﻿using QuanLyPhongTro.BLL;
+﻿using OfficeOpenXml;
+using QuanLyPhongTro.BLL;
 using QuanLyPhongTro.DTO;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LicenseContext = OfficeOpenXml.LicenseContext;
 
 namespace QuanLyPhongTro
 {
@@ -24,9 +26,15 @@ namespace QuanLyPhongTro
         // Khai báo đối tương của lớp BusinessLayer
         BLL_Customer _bd;
 
+        string excelFilePath = @"D:\learncode\ExcelQLTro\\CustomerInfo.xlsx";
+        ExcelHelper _excelHelper;
+
         public Frm_QuanLyCustomer_modi()
         {
             InitializeComponent();
+            _excelHelper = new ExcelHelper(excelFilePath);
+
+            ExcelPackage.LicenseContext = LicenseContext.Commercial;
         }
 
         private void Frm_QuanLyCustomer_modi_Load(object sender, EventArgs e)
@@ -49,6 +57,8 @@ namespace QuanLyPhongTro
                 txtMaKh.Text = _customer.MaKH;
                 txtHoTen.Text = _customer.HoTenKH;
                 cbPhai.SelectedItem = _customer.GioiTinhKH;
+                txtQueQuan.Text = _customer.QueQuan;
+                txtCMND.Text = _customer.CMND.ToString();
                 txtSDT.Text = _customer.SDT;
                 txtSoTT.Text = _customer.SoThangThue.ToString();
                 txtMaPhong.Text = _customer.MaP;
@@ -101,7 +111,7 @@ namespace QuanLyPhongTro
                     if (_bd.CapNhatCustomer(ref err, _customer) > 0)
                     {
                         MessageBox.Show("Cập nhật thành công");
-
+                        _excelHelper.UpdateCustomerInfo(_customer);
                         // Cập nhật trạng thái của phòng thành "đã hết"
                         room.TrangThai = "Đã hết";
                         bllRoom.CapNhatPhong(ref err, room);
@@ -120,7 +130,6 @@ namespace QuanLyPhongTro
                 catch (Exception)
                 {
                     MessageBox.Show("Mã phòng không tồn tại!");
-                    //MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
                 }
             }
             else
