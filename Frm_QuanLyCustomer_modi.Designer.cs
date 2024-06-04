@@ -47,6 +47,8 @@
             this.txtSoTT = new System.Windows.Forms.TextBox();
             this.txtMaPhong = new System.Windows.Forms.TextBox();
             this.cbPhai = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtCMND = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -122,7 +124,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(31, 336);
+            this.label7.Location = new System.Drawing.Point(30, 369);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(88, 16);
@@ -133,7 +135,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(31, 383);
+            this.label8.Location = new System.Drawing.Point(31, 405);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(91, 16);
@@ -144,7 +146,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(31, 433);
+            this.label9.Location = new System.Drawing.Point(31, 445);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(70, 16);
@@ -156,7 +158,7 @@
             this.btnUpdate.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnUpdate.Location = new System.Drawing.Point(149, 473);
+            this.btnUpdate.Location = new System.Drawing.Point(149, 528);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(131, 38);
@@ -170,7 +172,7 @@
             this.btnExit.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnExit.Location = new System.Drawing.Point(419, 473);
+            this.btnExit.Location = new System.Drawing.Point(417, 528);
             this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(131, 38);
@@ -213,7 +215,7 @@
             // 
             // txtSDT
             // 
-            this.txtSDT.Location = new System.Drawing.Point(149, 333);
+            this.txtSDT.Location = new System.Drawing.Point(149, 366);
             this.txtSDT.Margin = new System.Windows.Forms.Padding(4);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(471, 22);
@@ -221,7 +223,7 @@
             // 
             // txtSoTT
             // 
-            this.txtSoTT.Location = new System.Drawing.Point(149, 380);
+            this.txtSoTT.Location = new System.Drawing.Point(149, 399);
             this.txtSoTT.Margin = new System.Windows.Forms.Padding(4);
             this.txtSoTT.Name = "txtSoTT";
             this.txtSoTT.Size = new System.Drawing.Size(471, 22);
@@ -229,7 +231,7 @@
             // 
             // txtMaPhong
             // 
-            this.txtMaPhong.Location = new System.Drawing.Point(149, 430);
+            this.txtMaPhong.Location = new System.Drawing.Point(149, 442);
             this.txtMaPhong.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaPhong.Name = "txtMaPhong";
             this.txtMaPhong.Size = new System.Drawing.Size(471, 22);
@@ -244,11 +246,31 @@
             this.cbPhai.Size = new System.Drawing.Size(471, 24);
             this.cbPhai.TabIndex = 19;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(30, 327);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(91, 16);
+            this.label10.TabIndex = 20;
+            this.label10.Text = "CMND/CCCD:";
+            // 
+            // txtCMND
+            // 
+            this.txtCMND.Location = new System.Drawing.Point(149, 321);
+            this.txtCMND.Name = "txtCMND";
+            this.txtCMND.Size = new System.Drawing.Size(471, 22);
+            this.txtCMND.TabIndex = 21;
+            // 
             // Frm_QuanLyCustomer_modi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(637, 523);
+            this.ClientSize = new System.Drawing.Size(637, 579);
+            this.Controls.Add(this.txtCMND);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.cbPhai);
             this.Controls.Add(this.txtMaPhong);
             this.Controls.Add(this.txtSoTT);
@@ -301,5 +323,7 @@
         private System.Windows.Forms.TextBox txtSoTT;
         private System.Windows.Forms.TextBox txtMaPhong;
         private System.Windows.Forms.ComboBox cbPhai;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtCMND;
     }
 }

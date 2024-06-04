@@ -71,6 +71,7 @@ namespace QuanLyPhongTro
                     SDT = dtgvDsCustomer.CurrentRow.Cells["cl_SDT"].Value.ToString(),
                     SoThangThue = Convert.ToInt32(dtgvDsCustomer.CurrentRow.Cells["cl_SoThangThue"].Value),
                     MaP = dtgvDsCustomer.CurrentRow.Cells["cl_MaP"].Value.ToString(),
+                    CMND = Convert.ToInt32(dtgvDsCustomer.CurrentRow.Cells["cl_CMND"].Value)
                 };
             }
         }

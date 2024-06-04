@@ -33,6 +33,7 @@ namespace QuanLyPhongTro.BLL
                     new SqlParameter("@SDT",customer.SDT),
                      new SqlParameter("@SoThangThue",customer.SoThangThue),
                       new SqlParameter("@MaP",customer.MaP),
+                       new SqlParameter("@CMND",customer.CMND)
            };
             return Int32.Parse(db.GetDataTable(ref err, "PSP_Customer_InsertAndUpdate", CommandType.StoredProcedure, sqlparameter).Rows[0]["TotalRowChanged"].ToString());
         }

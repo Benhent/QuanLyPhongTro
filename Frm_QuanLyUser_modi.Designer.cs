@@ -43,6 +43,8 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.cbPhai = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtRole = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -157,7 +159,7 @@
             // 
             this.btnUpdate.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnUpdate.Location = new System.Drawing.Point(134, 361);
+            this.btnUpdate.Location = new System.Drawing.Point(134, 420);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(98, 34);
             this.btnUpdate.TabIndex = 13;
@@ -169,7 +171,7 @@
             // 
             this.btnExit.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnExit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnExit.Location = new System.Drawing.Point(317, 361);
+            this.btnExit.Location = new System.Drawing.Point(317, 420);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(98, 34);
             this.btnExit.TabIndex = 14;
@@ -185,11 +187,30 @@
             this.cbPhai.Size = new System.Drawing.Size(281, 21);
             this.cbPhai.TabIndex = 15;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(27, 359);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(43, 18);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Role:";
+            // 
+            // txtRole
+            // 
+            this.txtRole.Location = new System.Drawing.Point(134, 360);
+            this.txtRole.Name = "txtRole";
+            this.txtRole.Size = new System.Drawing.Size(281, 20);
+            this.txtRole.TabIndex = 17;
+            // 
             // Frm_QuanLyUser_modi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(427, 412);
+            this.ClientSize = new System.Drawing.Size(427, 466);
+            this.Controls.Add(this.txtRole);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.cbPhai);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnUpdate);
@@ -232,5 +253,7 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.ComboBox cbPhai;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtRole;
     }
 }

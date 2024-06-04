@@ -10,7 +10,7 @@ namespace QuanLyPhongTro
 {
     public class ClsMain
     {
-        public static string path = string.Format(@"{0}\Connection.ini", Application.StartupPath);
+        public static string path = "Data Source=ADMIN-PC\\SQLEXPRESS;Initial Catalog=QuanLyPhongTro;Integrated Security=True";
         public static string tenUser = string.Empty;
 
         public static Hashtable hsQuyenByUser = new Hashtable();

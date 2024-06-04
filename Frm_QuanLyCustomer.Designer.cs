@@ -41,6 +41,7 @@
             this.cl_GioiTinhKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cl_NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cl_QueQuan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cl_CMND = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cl_SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cl_SoThangThue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cl_MaP = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -126,6 +127,7 @@
             this.cl_GioiTinhKH,
             this.cl_NgaySinh,
             this.cl_QueQuan,
+            this.cl_CMND,
             this.cl_SDT,
             this.cl_SoThangThue,
             this.cl_MaP});
@@ -171,6 +173,13 @@
             this.cl_QueQuan.HeaderText = "QueQuan";
             this.cl_QueQuan.Name = "cl_QueQuan";
             this.cl_QueQuan.ReadOnly = true;
+            // 
+            // cl_CMND
+            // 
+            this.cl_CMND.DataPropertyName = "CMND";
+            this.cl_CMND.HeaderText = "CCCD/CMND";
+            this.cl_CMND.Name = "cl_CMND";
+            this.cl_CMND.ReadOnly = true;
             // 
             // cl_SDT
             // 
@@ -230,6 +239,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cl_GioiTinhKH;
         private System.Windows.Forms.DataGridViewTextBoxColumn cl_NgaySinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn cl_QueQuan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cl_CMND;
         private System.Windows.Forms.DataGridViewTextBoxColumn cl_SDT;
         private System.Windows.Forms.DataGridViewTextBoxColumn cl_SoThangThue;
         private System.Windows.Forms.DataGridViewTextBoxColumn cl_MaP;

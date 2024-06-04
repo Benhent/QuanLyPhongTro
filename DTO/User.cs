@@ -14,5 +14,6 @@ namespace QuanLyPhongTro.DTO
         public string DienThoai { get; set; }
         public string TaiKhoan { get; set; }
         public byte[] MatKhau { get; set;}
+        public int GroupID { get; set; }
     }
 }

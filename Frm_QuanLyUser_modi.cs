@@ -53,6 +53,7 @@ namespace QuanLyPhongTro
                 txtTaiKhoan.Text = _user.TaiKhoan;
                 //Chuyển đổi MatKhau từ mảng byte về chuỗi
                 txtMatKhau.Text = Encoding.UTF8.GetString(_user.MatKhau);
+                txtRole.Text = _user.GroupID.ToString();
                 txtHoTen.Focus();
             }
 
@@ -76,7 +77,8 @@ namespace QuanLyPhongTro
                         Phai = phai,
                         DienThoai = txtDienThoai.Text,
                         TaiKhoan = txtTaiKhoan.Text,
-                        MatKhau = matKhauBytes
+                        MatKhau = matKhauBytes,
+                        GroupID = int.Parse(txtRole.Text)
                     };
 
                     // Gọi phương thức cập nhật thông tin người dùng từ đối tượng BusinessLayer (bd)

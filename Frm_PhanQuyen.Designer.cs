@@ -231,6 +231,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_PhanQuyen";
             this.Text = "Frm_PhanQuyen";
             this.Load += new System.EventHandler(this.Frm_PhanQuyen_Load);

@@ -90,6 +90,7 @@ namespace QuanLyPhongTro
                         GioiTinhKH = cbPhai.Text,
                         NgaySinh = ngaySinh,
                         QueQuan = txtQueQuan.Text,
+                        CMND = int.Parse(txtCMND.Text),
                         SDT = txtSDT.Text,
                         SoThangThue = int.Parse(txtSoTT.Text),
                         MaP = txtMaPhong.Text

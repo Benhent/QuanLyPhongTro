@@ -16,5 +16,6 @@ namespace QuanLyPhongTro.DTO
         public string SDT {  get; set; }
         public int SoThangThue {  get; set; }
         public string MaP { get; set; }
+        public int CMND { get; set; }
     }
 }

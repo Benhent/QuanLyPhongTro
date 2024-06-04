@@ -35,7 +35,8 @@ namespace QuanLyPhongTro.BLL
                  new SqlParameter("@Phai",user.Phai),
                   new SqlParameter("@DienThoai",user.DienThoai),
                    new SqlParameter("@TaiKhoan",user.TaiKhoan),
-                    new SqlParameter("@MatKhau",user.MatKhau)
+                    new SqlParameter("@MatKhau",user.MatKhau),
+                     new SqlParameter("@GroupID",user.GroupID)
            };
             return _db.MyExcuteNonQuery(ref err, "PSP_User_InsertAndUpdate", CommandType.StoredProcedure, sqlparameter);
 

@@ -65,27 +65,37 @@ namespace QuanLyPhongTro
                 int id;
                 if (int.TryParse(idString, out id))
                 {
-                    string phaiString = dtgvDsUser.CurrentRow.Cells["cl_Phai"].Value.ToString();
-                    bool phai;
-                    if (bool.TryParse(phaiString, out phai))
+                    string roleString = dtgvDsUser.CurrentRow.Cells["cl_GroupID"].Value.ToString();
+                    int role;
+                    if (int.TryParse (roleString, out role))
                     {
-                        string matKhauString = dtgvDsUser.CurrentRow.Cells["cl_MatKhau"].Value.ToString();
-                        byte[] matKhauBytes = Encoding.UTF8.GetBytes(matKhauString);
-
-                        _user = new User()
+                        string phaiString = dtgvDsUser.CurrentRow.Cells["cl_Phai"].Value.ToString();
+                        bool phai;
+                        if (bool.TryParse(phaiString, out phai))
                         {
-                            ID = id,
-                            HoTen = dtgvDsUser.CurrentRow.Cells["cl_HoTen"].Value.ToString(),
-                            Phai = phai,
-                            DienThoai = dtgvDsUser.CurrentRow.Cells["cl_DienThoai"].Value.ToString(),
-                            TaiKhoan = dtgvDsUser.CurrentRow.Cells["cl_TaiKhoan"].Value.ToString(),
-                            MatKhau = matKhauBytes
-                        };
+                            string matKhauString = dtgvDsUser.CurrentRow.Cells["cl_MatKhau"].Value.ToString();
+                            byte[] matKhauBytes = Encoding.UTF8.GetBytes(matKhauString);
+
+                            _user = new User()
+                            {
+                                ID = id,
+                                HoTen = dtgvDsUser.CurrentRow.Cells["cl_HoTen"].Value.ToString(),
+                                Phai = phai,
+                                DienThoai = dtgvDsUser.CurrentRow.Cells["cl_DienThoai"].Value.ToString(),
+                                TaiKhoan = dtgvDsUser.CurrentRow.Cells["cl_TaiKhoan"].Value.ToString(),
+                                MatKhau = matKhauBytes,
+                                GroupID = role
+                            };
+                        }
+                        else
+                        {
+                            // Xử lý khi không thể chuyển đổi Phai
+                            MessageBox.Show("Không thể chuyển đổi giá trị Phai.");
+                        }
                     }
                     else
                     {
-                        // Xử lý khi không thể chuyển đổi Phai
-                        MessageBox.Show("Không thể chuyển đổi giá trị Phai.");
+                        MessageBox.Show("Không thể chuyển đổi giá trị Role.");
                     }
                 }
                 else
