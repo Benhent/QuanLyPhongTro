@@ -39,6 +39,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pb_QuanLyUser = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tbl_HoaDon = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pb_QuanLyPhong = new System.Windows.Forms.PictureBox();
@@ -51,6 +53,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb_PhanQuyen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_QuanLyUser)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbl_HoaDon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_QuanLyPhong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_QuanLyCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl2)).BeginInit();
@@ -161,6 +164,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label6);
+            this.tabPage2.Controls.Add(this.tbl_HoaDon);
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.pb_QuanLyPhong);
@@ -172,6 +177,26 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Quản Lý";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(371, 52);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(49, 13);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Hóa đơn";
+            // 
+            // tbl_HoaDon
+            // 
+            this.tbl_HoaDon.Image = global::QuanLyPhongTro.Properties.Resources.bill;
+            this.tbl_HoaDon.Location = new System.Drawing.Point(364, 6);
+            this.tbl_HoaDon.Name = "tbl_HoaDon";
+            this.tbl_HoaDon.Size = new System.Drawing.Size(65, 44);
+            this.tbl_HoaDon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.tbl_HoaDon.TabIndex = 7;
+            this.tbl_HoaDon.TabStop = false;
+            this.tbl_HoaDon.Click += new System.EventHandler(this.tbl_HoaDon_Click);
             // 
             // label5
             // 
@@ -251,6 +276,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb_QuanLyUser)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbl_HoaDon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_QuanLyPhong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_QuanLyCustomer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl2)).EndInit();
@@ -277,5 +303,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private DevComponents.DotNetBar.TabControl tabControl2;
+        private System.Windows.Forms.PictureBox tbl_HoaDon;
+        private System.Windows.Forms.Label label6;
     }
 }

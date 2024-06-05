@@ -130,6 +130,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\BLL_Bill.cs" />
     <Compile Include="BLL\BLL_Customer.cs" />
     <Compile Include="BLL\BLL_HeThong.cs" />
     <Compile Include="BLL\BLL_Room.cs" />
@@ -275,6 +276,7 @@
     <None Include="img\logout.png" />
     <None Include="img\calculator.png" />
     <None Include="img\BackGround.png" />
+    <None Include="img\bill.png" />
     <Content Include="img\padlock.png" />
     <None Include="img\people.png" />
     <None Include="img\room.png" />

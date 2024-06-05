@@ -144,5 +144,10 @@ namespace QuanLyPhongTro
         {
             OpenForm(true, "Phân quyền", new Frm_PhanQuyen());
         }
+
+        private void tbl_HoaDon_Click(object sender, EventArgs e)
+        {
+            OpenForm(true, "Hóa đơn", new Frm_QuanLyHoaDon());
+        }
     }
 }

@@ -30,118 +30,162 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_QuanLyHoaDon));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btn_Them = new System.Windows.Forms.ToolStripButton();
+            this.btn_Sua = new System.Windows.Forms.ToolStripButton();
+            this.btn_Xoa = new System.Windows.Forms.ToolStripButton();
+            this.btn_Tinh = new System.Windows.Forms.ToolStripButton();
+            this.btn_Thoat = new System.Windows.Forms.ToolStripButton();
+            this.dtgvDSBill = new System.Windows.Forms.DataGridView();
+            this.cl_MaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cl_TienDien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cl_TienNuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cl_TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cl_MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cbo_MaKH = new System.Windows.Forms.ComboBox();
+            this.txt_TongTien = new System.Windows.Forms.TextBox();
+            this.txt_GiaP = new System.Windows.Forms.TextBox();
+            this.txt_TienNuoc = new System.Windows.Forms.TextBox();
+            this.txt_TienDien = new System.Windows.Forms.TextBox();
+            this.txt_MaHD = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cl_MaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_TienDien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_TienNuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lblErr = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvDSBill)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButton2,
-            this.toolStripButton3,
-            this.toolStripButton4,
-            this.toolStripButton5});
+            this.btn_Them,
+            this.btn_Sua,
+            this.btn_Xoa,
+            this.btn_Tinh,
+            this.btn_Thoat});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(800, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButton1
+            // btn_Them
             // 
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(57, 22);
-            this.toolStripButton1.Text = "Thêm";
+            this.btn_Them.Image = ((System.Drawing.Image)(resources.GetObject("btn_Them.Image")));
+            this.btn_Them.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_Them.Name = "btn_Them";
+            this.btn_Them.Size = new System.Drawing.Size(57, 22);
+            this.btn_Them.Text = "Thêm";
+            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
             // 
-            // toolStripButton2
+            // btn_Sua
             // 
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(46, 22);
-            this.toolStripButton2.Text = "Sửa";
+            this.btn_Sua.Image = ((System.Drawing.Image)(resources.GetObject("btn_Sua.Image")));
+            this.btn_Sua.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_Sua.Name = "btn_Sua";
+            this.btn_Sua.Size = new System.Drawing.Size(46, 22);
+            this.btn_Sua.Text = "Sửa";
+            this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
             // 
-            // toolStripButton3
+            // btn_Xoa
             // 
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(47, 22);
-            this.toolStripButton3.Text = "Xóa";
+            this.btn_Xoa.Image = ((System.Drawing.Image)(resources.GetObject("btn_Xoa.Image")));
+            this.btn_Xoa.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_Xoa.Name = "btn_Xoa";
+            this.btn_Xoa.Size = new System.Drawing.Size(47, 22);
+            this.btn_Xoa.Text = "Xóa";
+            this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
             // 
-            // toolStripButton4
+            // btn_Tinh
             // 
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(50, 22);
-            this.toolStripButton4.Text = "Tính";
+            this.btn_Tinh.Image = ((System.Drawing.Image)(resources.GetObject("btn_Tinh.Image")));
+            this.btn_Tinh.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_Tinh.Name = "btn_Tinh";
+            this.btn_Tinh.Size = new System.Drawing.Size(50, 22);
+            this.btn_Tinh.Text = "Tính";
+            this.btn_Tinh.Click += new System.EventHandler(this.btn_Tinh_Click);
             // 
-            // toolStripButton5
+            // btn_Thoat
             // 
-            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(57, 22);
-            this.toolStripButton5.Text = "Thoát";
+            this.btn_Thoat.Image = ((System.Drawing.Image)(resources.GetObject("btn_Thoat.Image")));
+            this.btn_Thoat.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_Thoat.Name = "btn_Thoat";
+            this.btn_Thoat.Size = new System.Drawing.Size(57, 22);
+            this.btn_Thoat.Text = "Thoát";
+            this.btn_Thoat.Click += new System.EventHandler(this.btn_Thoat_Click);
             // 
-            // dataGridView1
+            // dtgvDSBill
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgvDSBill.AllowUserToAddRows = false;
+            this.dtgvDSBill.AllowUserToDeleteRows = false;
+            this.dtgvDSBill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvDSBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvDSBill.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cl_MaHD,
             this.cl_TienDien,
             this.cl_TienNuoc,
             this.cl_TongTien,
             this.cl_MaKH});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 230);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(800, 220);
-            this.dataGridView1.TabIndex = 2;
+            this.dtgvDSBill.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgvDSBill.Location = new System.Drawing.Point(0, 230);
+            this.dtgvDSBill.Name = "dtgvDSBill";
+            this.dtgvDSBill.ReadOnly = true;
+            this.dtgvDSBill.Size = new System.Drawing.Size(800, 220);
+            this.dtgvDSBill.TabIndex = 2;
+            this.dtgvDSBill.Click += new System.EventHandler(this.dtgvDSBill_Click);
+            // 
+            // cl_MaHD
+            // 
+            this.cl_MaHD.DataPropertyName = "MaHD";
+            this.cl_MaHD.HeaderText = "MaHD";
+            this.cl_MaHD.Name = "cl_MaHD";
+            this.cl_MaHD.ReadOnly = true;
+            // 
+            // cl_TienDien
+            // 
+            this.cl_TienDien.DataPropertyName = "TienDien";
+            this.cl_TienDien.HeaderText = "TienDien";
+            this.cl_TienDien.Name = "cl_TienDien";
+            this.cl_TienDien.ReadOnly = true;
+            // 
+            // cl_TienNuoc
+            // 
+            this.cl_TienNuoc.DataPropertyName = "TienNuoc";
+            this.cl_TienNuoc.HeaderText = "TienNuoc";
+            this.cl_TienNuoc.Name = "cl_TienNuoc";
+            this.cl_TienNuoc.ReadOnly = true;
+            // 
+            // cl_TongTien
+            // 
+            this.cl_TongTien.DataPropertyName = "TongTien";
+            this.cl_TongTien.HeaderText = "TongTien";
+            this.cl_TongTien.Name = "cl_TongTien";
+            this.cl_TongTien.ReadOnly = true;
+            // 
+            // cl_MaKH
+            // 
+            this.cl_MaKH.DataPropertyName = "MaKH";
+            this.cl_MaKH.HeaderText = "MaKH";
+            this.cl_MaKH.Name = "cl_MaKH";
+            this.cl_MaKH.ReadOnly = true;
             // 
             // groupBox1
             // 
             this.groupBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox1.BackgroundImage")));
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.cbo_MaKH);
+            this.groupBox1.Controls.Add(this.txt_TongTien);
+            this.groupBox1.Controls.Add(this.txt_GiaP);
+            this.groupBox1.Controls.Add(this.txt_TienNuoc);
+            this.groupBox1.Controls.Add(this.txt_TienDien);
+            this.groupBox1.Controls.Add(this.txt_MaHD);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
@@ -157,48 +201,50 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Hóa đơn tháng";
             // 
-            // textBox6
+            // cbo_MaKH
             // 
-            this.textBox6.Location = new System.Drawing.Point(494, 96);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(280, 24);
-            this.textBox6.TabIndex = 11;
+            this.cbo_MaKH.FormattingEnabled = true;
+            this.cbo_MaKH.Location = new System.Drawing.Point(494, 36);
+            this.cbo_MaKH.Name = "cbo_MaKH";
+            this.cbo_MaKH.Size = new System.Drawing.Size(280, 26);
+            this.cbo_MaKH.TabIndex = 12;
+            this.cbo_MaKH.SelectedIndexChanged += new System.EventHandler(this.cbo_MaKH_SelectedIndexChanged);
             // 
-            // textBox5
+            // txt_TongTien
             // 
-            this.textBox5.Location = new System.Drawing.Point(494, 66);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(280, 24);
-            this.textBox5.TabIndex = 10;
+            this.txt_TongTien.Location = new System.Drawing.Point(494, 96);
+            this.txt_TongTien.Name = "txt_TongTien";
+            this.txt_TongTien.ReadOnly = true;
+            this.txt_TongTien.Size = new System.Drawing.Size(280, 24);
+            this.txt_TongTien.TabIndex = 11;
             // 
-            // textBox4
+            // txt_GiaP
             // 
-            this.textBox4.Location = new System.Drawing.Point(494, 36);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(280, 24);
-            this.textBox4.TabIndex = 9;
+            this.txt_GiaP.Location = new System.Drawing.Point(494, 66);
+            this.txt_GiaP.Name = "txt_GiaP";
+            this.txt_GiaP.Size = new System.Drawing.Size(280, 24);
+            this.txt_GiaP.TabIndex = 10;
             // 
-            // textBox3
+            // txt_TienNuoc
             // 
-            this.textBox3.Location = new System.Drawing.Point(103, 96);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(261, 24);
-            this.textBox3.TabIndex = 8;
+            this.txt_TienNuoc.Location = new System.Drawing.Point(103, 96);
+            this.txt_TienNuoc.Name = "txt_TienNuoc";
+            this.txt_TienNuoc.Size = new System.Drawing.Size(261, 24);
+            this.txt_TienNuoc.TabIndex = 8;
             // 
-            // textBox2
+            // txt_TienDien
             // 
-            this.textBox2.Location = new System.Drawing.Point(103, 66);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(261, 24);
-            this.textBox2.TabIndex = 7;
+            this.txt_TienDien.Location = new System.Drawing.Point(103, 66);
+            this.txt_TienDien.Name = "txt_TienDien";
+            this.txt_TienDien.Size = new System.Drawing.Size(261, 24);
+            this.txt_TienDien.TabIndex = 7;
             // 
-            // textBox1
+            // txt_MaHD
             // 
-            this.textBox1.Location = new System.Drawing.Point(103, 36);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(261, 24);
-            this.textBox1.TabIndex = 6;
+            this.txt_MaHD.Location = new System.Drawing.Point(103, 36);
+            this.txt_MaHD.Name = "txt_MaHD";
+            this.txt_MaHD.Size = new System.Drawing.Size(261, 24);
+            this.txt_MaHD.TabIndex = 6;
             // 
             // label6
             // 
@@ -260,56 +306,41 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã hóa đơn:";
             // 
-            // cl_MaHD
+            // statusStrip1
             // 
-            this.cl_MaHD.DataPropertyName = "MaHD";
-            this.cl_MaHD.HeaderText = "MaHD";
-            this.cl_MaHD.Name = "cl_MaHD";
-            this.cl_MaHD.ReadOnly = true;
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblErr});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 428);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(800, 22);
+            this.statusStrip1.TabIndex = 3;
+            this.statusStrip1.Text = "statusStrip1";
             // 
-            // cl_TienDien
+            // lblErr
             // 
-            this.cl_TienDien.DataPropertyName = "TienDien";
-            this.cl_TienDien.HeaderText = "TienDien";
-            this.cl_TienDien.Name = "cl_TienDien";
-            this.cl_TienDien.ReadOnly = true;
-            // 
-            // cl_TienNuoc
-            // 
-            this.cl_TienNuoc.DataPropertyName = "TienNuoc";
-            this.cl_TienNuoc.HeaderText = "TienNuoc";
-            this.cl_TienNuoc.Name = "cl_TienNuoc";
-            this.cl_TienNuoc.ReadOnly = true;
-            // 
-            // cl_TongTien
-            // 
-            this.cl_TongTien.DataPropertyName = "TongTien";
-            this.cl_TongTien.HeaderText = "TongTien";
-            this.cl_TongTien.Name = "cl_TongTien";
-            this.cl_TongTien.ReadOnly = true;
-            // 
-            // cl_MaKH
-            // 
-            this.cl_MaKH.DataPropertyName = "MaKH";
-            this.cl_MaKH.HeaderText = "MaKH";
-            this.cl_MaKH.Name = "cl_MaKH";
-            this.cl_MaKH.ReadOnly = true;
+            this.lblErr.Name = "lblErr";
+            this.lblErr.Size = new System.Drawing.Size(118, 17);
+            this.lblErr.Text = "toolStripStatusLabel1";
             // 
             // Frm_QuanLyHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.dtgvDSBill);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "Frm_QuanLyHoaDon";
             this.Text = "Frm_QuanLyHoaDon";
+            this.Load += new System.EventHandler(this.Frm_QuanLyHoaDon_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvDSBill)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -318,29 +349,31 @@
         #endregion
 
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
-        private System.Windows.Forms.ToolStripButton toolStripButton5;
+        private System.Windows.Forms.ToolStripButton btn_Them;
+        private System.Windows.Forms.ToolStripButton btn_Sua;
+        private System.Windows.Forms.ToolStripButton btn_Xoa;
+        private System.Windows.Forms.ToolStripButton btn_Tinh;
+        private System.Windows.Forms.ToolStripButton btn_Thoat;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_TongTien;
+        private System.Windows.Forms.TextBox txt_GiaP;
+        private System.Windows.Forms.TextBox txt_TienNuoc;
+        private System.Windows.Forms.TextBox txt_TienDien;
+        private System.Windows.Forms.TextBox txt_MaHD;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtgvDSBill;
         private System.Windows.Forms.DataGridViewTextBoxColumn cl_MaHD;
         private System.Windows.Forms.DataGridViewTextBoxColumn cl_TienDien;
         private System.Windows.Forms.DataGridViewTextBoxColumn cl_TienNuoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn cl_TongTien;
         private System.Windows.Forms.DataGridViewTextBoxColumn cl_MaKH;
+        private System.Windows.Forms.ComboBox cbo_MaKH;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel lblErr;
     }
 }
